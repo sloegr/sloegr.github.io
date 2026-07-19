@@ -1,0 +1,64 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500;600&family=Space+Grotesk:wght@300;400;500;600;700;900&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+  
+  --color-primary: #00e5ff;
+  --color-glow-cyan: rgba(0, 229, 255, 0.15);
+  --color-background-dark: #0f1419;
+  --color-surface-dark: #141c24;
+  --color-muted: #234448;
+  --color-accent-green: #39ff14;
+}
+
+body {
+  background-color: #0f1419;
+  background-image: 
+    linear-gradient(to right, rgba(20, 28, 36, 0.6) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(20, 28, 36, 0.6) 1px, transparent 1px);
+  background-size: 40px 40px;
+  color: #e2e8f0;
+}
+
+.glow-border {
+  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
+}
+
+.cursor-blink {
+  animation: blink-anim 1s step-end infinite;
+}
+
+@keyframes blink-anim {
+  from, to { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+.scanline {
+  width: 100%;
+  height: 2px;
+  background: rgba(0, 229, 255, 0.08);
+  position: absolute;
+  pointer-events: none;
+  animation: scan-anim 6s linear infinite;
+}
+
+@keyframes scan-anim {
+  0% { top: 0%; }
+  100% { top: 100%; }
+}
+
+.pulse-dot {
+  animation: pulse-green-anim 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulse-green-anim {
+  0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px #39ff14); }
+  50% { opacity: 0.4; filter: drop-shadow(0 0 6px #39ff14); }
+}
+
+.telemetry-bar {
+  transition: height 0.5s ease-in-out;
+}
+
