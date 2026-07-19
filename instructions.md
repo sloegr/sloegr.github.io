@@ -1,18 +1,16 @@
-# Technical Development Instructions
+# Development Notes
 
-This document outlines the standard operation protocols for building, extending, and maintaining the Nicholas Vollmer Portfolio.
+## Architecture
 
-## Architecture Outline
-- **State Management**: Standard React hooks (`useState`, `useEffect`, `useCallback`, `useRef`) managing real-time coordinates, system status parameters, simulation updates, and layout navigation.
-- **Terminal System**: Command dispatcher inside `/src/App.tsx` parsing custom user strings (`help`, `about`, `projects`, `ledger`, `specs`, `matrix`, `contact`, `beep`, `clear`).
-- **Interactive Modals**: Multi-layered blueprints rendering SVG illustrations and technical specs. Supports viewport scanning line animations.
+- `src/data.ts` holds all public portfolio content and must remain the only source for identity, project, workflow, and link claims.
+- `src/types.ts` defines the data contracts for public profile, case study, evidence, workflow, and tool-practice records.
+- `src/App.tsx` renders the responsive portfolio, terminal, case-study dialog, optional sound, and isolated decorative effects.
+- `src/index.css` owns the blueprint theme, interaction styles, and reduced-motion behavior.
 
-## Key Files
-- `src/App.tsx` - Main applet orchestrating visual layers, terminal dispatcher, Web Audio oscillators, and modal frames.
-- `src/data.ts` - Central technical schematics directory containing project metrics and technology ledger states.
-- `src/types.ts` - Core TypeScript types and contract declarations.
+## Content rules
 
-## Development Checklist
-- Run `npm run dev` to start the local simulation engine.
-- Execute `npm run build` to package files. All static outputs are packed into `dist/` directory.
-- Verify styling using standard Tailwind utility classes. Avoid separate stylesheet layers.
+Never replace an empty state with invented content. Every project should name the problem, role, solution, outcome, and approved evidence. A missing external URL must render as unavailable; it must never become an alert, guessed URL, or placeholder destination.
+
+## Before handoff
+
+Run `npm run lint` and `npm run build`. Check keyboard navigation, the project dialog, mobile navigation, reduced-motion behavior, sound opt-in, and every public link after content is supplied.

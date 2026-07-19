@@ -1,73 +1,116 @@
+import { Profile, Project, ToolPractice, WorkflowStage } from './types';
+
 /**
- * @license
- * SPDX-License-Identifier: Apache-2.0
+ * The only source of public portfolio content. Populate these fields with
+ * owner-approved evidence before publishing; empty values intentionally render
+ * as honest unavailable states in the interface.
  */
+export const PROFILE: Profile = {
+  // Your public name exactly as you want visitors to see it.
+  displayName: 'Jeremiah John',
 
-import { Project, LedgerItem } from './types';
+  // A short, truthful professional title. Avoid titles you cannot support.
+  title: 'Software Engineer',
 
-export const PROJECTS: Project[] = [
-  {
-    id: 'CC_082',
-    title: 'DISTRIBUTED_CACHE_SYS',
-    status: 'STABLE_V2',
-    description: 'High-performance memory allocation engine with low-latency node synchronization for multi-region clusters.',
-    tech: ['Rust', 'gRPC', 'Redis'],
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuDtp9MYKe3kFP_uwsG8-sIcDElFTS1b5hpqADcUov2L2Vivqz2N-8wtJnwaa9ZPmpiruF4umfE8iABw7i0WkqA0QiHcmpWTiT4bfjWF8aUKJaNHUq9eku1IW2xAf2XLDS2Upz2_EgdDFC_YLyH2Yboc---3gN85t10Xw5M9OdqlvXXnHvBOfJt9j1qXm8GN-kF1UJxnMNxZdA6MjE-4ZOhbXt_ldowWNdKjx1v2zwMuPC0Tl4yZmLGXhg',
-    specs: [
-      { label: 'Latency', value: '1.2ms Avg' },
-      { label: 'Throughput', value: '4.2M req/s' }
-    ],
-    metrics: [
-      { label: 'Lighthouse Score', value: '100 / 100', color: 'accent-green' },
-      { label: 'Build Time', value: '1.24s' },
-      { label: 'Asset Size', value: '42kb' },
-      { label: 'Uptime', value: '99.99%', color: 'accent-green' }
-    ]
-  },
-  {
-    id: 'AX_119',
-    title: 'NEURAL_MESH_v0.4',
-    status: 'BETA_BUILD',
-    description: 'Self-optimizing mesh network layer utilizing decentralized consensus protocols for edge compute nodes.',
-    tech: ['Go', 'WASM', 'Libp2p'],
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuBz-eRUQCC53WmhOZHB3fCyfa8B-WJ1ky6NiQXzklz3vM-Ep7K2aQwmL5hAarGqG0F1NFMnPljSalfhTRtDoJmix1XJxh2ELlIf44DI12Q9-eyJhNlHNWzxZS4GCG-NeO8EeJ_bv0K0mw3t_FHbY7wqjYUoqGghyP4cnv8sQYW6q8TlsZ1og3Q1my3xqUloiaGUVSzebGcoI_l_VDYmZVToR8efwplnZyGXSj8WC-Ll893Gu0fhDKr3Bw',
-    specs: [
-      { label: 'Uptime', value: '99.998%' },
-      { label: 'Mesh_Nodes', value: '12,401' }
-    ],
-    metrics: [
-      { label: 'Lighthouse Score', value: '98 / 100', color: 'accent-green' },
-      { label: 'Build Time', value: '2.45s' },
-      { label: 'Asset Size', value: '128kb' },
-      { label: 'Uptime', value: '99.99%', color: 'accent-green' }
-    ]
-  },
-  {
-    id: 'DB_994',
-    title: 'KRYPTOS_ENGINE',
-    status: 'LEGACY_STABLE',
-    description: 'Hardware-accelerated encryption layer for cold storage archiving with zero-knowledge verification.',
-    tech: ['C++', 'CUDA', 'AES-GCM'],
-    imageUrl: 'https://lh3.googleusercontent.com/aida-public/AB6AXuAFRMO5roFrQuZAVcDrpcTmseoAa-LfOV7TISkPEPq20Ql_tK--jKL1nvpTwYl5h2lh68x-cogWAOTI9EAfjxtGVHqsGk4i2VS_XvcmQ3RP2Q1gbrDmUF5h8FcYPfm-yQ1GrjRb1_bun--9PINmyhTYxAoiUdxIjI9qXNsRjMLk2iRP7ceOvJ5RXpM7Pwlj6Lf5CQx76aeN0g-ecphnUcqAd4fyYDCMMPAVk4PTwLIsla0wbvYq4KTJWw',
-    specs: [
-      { label: 'Encryption', value: '4096-bit' },
-      { label: 'Safety_Index', value: 'AAA+' }
-    ],
-    metrics: [
-      { label: 'Lighthouse Score', value: '100 / 100', color: 'accent-green' },
-      { label: 'Build Time', value: '1.98s' },
-      { label: 'Asset Size', value: '76kb' },
-      { label: 'Uptime', value: '100.0%', color: 'accent-green' }
-    ]
-  }
-];
+  // One sentence explaining the kind of work you do or want to be hired for.
+  // summary: 'I build reliable web applications with a thoughtful, agent-assisted workflow.',
 
-export const LEDGER_ITEMS: LedgerItem[] = [
-  { tool: '[ GitHub ]', type: 'Version Control', proficiency: 95, status: 'ONLINE' },
-  { tool: '[ ChatGPT ]', type: 'AI Assistant', proficiency: 90, status: 'ONLINE' },
-  { tool: '[ Claude ]', type: 'AI Assistant', proficiency: 85, status: 'ONLINE' },
-  { tool: '[ OpenCode ]', type: 'IDE Workflow', proficiency: 80, status: 'ONLINE' },
-  { tool: '[ Legacy.Sys ]', type: 'Deprecated Tool', proficiency: 45, status: 'OFFLINE' }
-];
+  // A slightly longer introduction. Keep it public-safe; do not include private details.
+  // bio: 'Write two or three sentences about your experience, interests, and the work shown here.',
 
-export const SYSTEM_ARCH_IMAGE = 'https://lh3.googleusercontent.com/aida-public/AB6AXuD9aLl_SSmMuMiB0eebRTYkPqengeRylKohMzhZBaV-8-LArCt4uFZ2UTbilgL9TaOWdL64bea_AOXT61fe_X6EDf3Jf_qqVQOnDA9cj-Fe5ULcCasIIp853jnbdQRE0G1Tk8No12Ei3hEY_ydZ4pHM5KYLz2_9qo7JwCKCTj5b8hcZrst2oyfv6kv1Dnn47HflyEOh-MTe2Dsfne_dijg0fDhM5TP4Ve5pTU6B-GhKkY-vw0SNgzPGSQ';
+  // Optional city, country, or time zone. Leave this commented out if you do not want it public.
+  // location: 'City, Country',
+
+  // Optional public email address. Do not add a personal address unless you want it visible on the site.
+  // email: 'you@example.com',
+
+  // Public profiles only. Add one object per approved link.
+  links: [
+    { label: 'GitHub', url: 'https://github.com/sloegr' },
+    { label: 'LinkedIn', url: 'https://www.linkedin.com/in/jeremiah-joseph-john/' },
+  ],
+
+
+  // Optional public PDF or hosted resume link. The site shows “unavailable” until this is set.
+  // resumeUrl: '/assets/your-resume.pdf',
+};
+
+/**
+ * Add a case study only when every claim in it is true and approved for public
+ * release. Copy the commented structure below, fill it with real information,
+ * then remove the leading `//` characters.
+ */
+export const PROJECTS: Project[] = [];
+// export const PROJECTS: Project[] = [
+//   {
+//     // A short unique ID used internally by the UI.
+//     id: 'project-01',
+//     // The real project name. Do not use a client name without permission.
+//     title: 'Project name',
+//     // An honest status such as “Shipped”, “In progress”, or “Private”.
+//     status: 'Shipped',
+//     // One or two sentences describing what the project is.
+//     summary: 'A concise, factual summary of the project.',
+//     // What problem existed and who it helped. Keep confidential details out.
+//     problem: 'The user or business problem this project addressed.',
+//     // Your specific contribution—not a team-wide or agent-generated claim.
+//     role: 'What I designed, built, reviewed, or owned.',
+//     // Optional: important limits such as timeline, integrations, privacy, or cost.
+//     constraints: 'Optional constraints and trade-offs.',
+//     // Optional: the approach and key technical decisions you made.
+//     solution: 'Optional explanation of the solution.',
+//     // Optional: a measured outcome or honest qualitative result.
+//     outcome: 'Optional outcome, with only defensible metrics.',
+//     // Optional: how agents helped and how you reviewed or verified their work.
+//     agentWorkflow: 'Optional public description of the agent-assisted workflow.',
+//     // Technologies you genuinely used on this project.
+//     technologies: ['React', 'TypeScript'],
+//     // Evidence readers can understand: verified metrics, a published write-up, etc.
+//     evidence: [{ label: 'Evidence', value: 'Describe the approved evidence.' }],
+//     // Optional local or approved remote image. Always write meaningful alt text.
+//     // image: { src: '/assets/project-01.png', alt: 'Describe what the image shows.' },
+//     // A real public deployment, or an honest unavailable state.
+//     live: { label: 'View live site', unavailableLabel: 'No public deployment' },
+//     // A real public repository, or an honest unavailable state.
+//     repository: { label: 'View repository', unavailableLabel: 'Repository private' },
+//   },
+// ];
+
+/**
+ * Describe your actual delivery process, not an aspirational one. Each stage
+ * should make clear where you remain accountable for the outcome.
+ */
+export const WORKFLOW_STAGES: WorkflowStage[] = [];
+// export const WORKFLOW_STAGES: WorkflowStage[] = [
+//   {
+//     // A short stage name, for example “Specify” or “Review”.
+//     name: 'Specify',
+//     // What happens during this stage and what artifact it produces.
+//     description: 'I turn the problem into scoped requirements and acceptance criteria.',
+//     // The decision or check you personally own at this point.
+//     accountability: 'I confirm the scope and acceptance criteria before implementation.',
+//   },
+// ];
+
+/**
+ * List tools only when you really use them. The status is intentionally a
+ * descriptive category rather than a made-up proficiency percentage.
+ */
+export const TOOL_PRACTICES: ToolPractice[] = [];
+// export const TOOL_PRACTICES: ToolPractice[] = [
+//   {
+//     // The real tool or environment name.
+//     tool: 'Tool name',
+//     // What you use it for in your workflow.
+//     context: 'How it helps with a specific part of my work.',
+//     // Choose exactly one: 'Primary workflow', 'Experimentation', or 'Not currently used'.
+//     status: 'Primary workflow',
+//   },
+// ];
+
+export const SITE_METADATA = {
+  // Browser and social-preview title. Use your name or portfolio title when ready.
+  title: 'Engineering Portfolio',
+  // Browser and social-preview description. Keep it accurate and concise.
+  description: 'An evidence-based software engineering portfolio.',
+};

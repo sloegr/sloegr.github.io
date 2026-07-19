@@ -1,20 +1,32 @@
-<div align="center">
-<img width="1200" height="475" alt="GHBanner" src="https://ai.google.dev/static/site-assets/images/share-ais-513315318.png" />
-</div>
+# Engineering Portfolio
 
-# Run and deploy your AI Studio app
+A static React portfolio with a blueprint-inspired interface. It is designed to present only owner-approved identity, project evidence, external links, and agent-assisted engineering practices.
 
-This contains everything you need to run your app locally.
+## Local development
 
-View your app in AI Studio: https://ai.studio/apps/15b4ce12-6959-439e-998d-370d4478caf1
+Prerequisite: Node.js 20 or newer.
 
-## Run Locally
+```bash
+npm install
+npm run dev
+```
 
-**Prerequisites:**  Node.js
+Use `npm run lint` for TypeScript validation and `npm run build` to create the production bundle in `dist/`.
 
+## Publishing content
 
-1. Install dependencies:
-   `npm install`
-2. Set the `GEMINI_API_KEY` in [.env.local](.env.local) to your Gemini API key
-3. Run the app:
-   `npm run dev`
+`src/data.ts` is the single source of public portfolio content. Before publishing, supply and verify:
+
+- public identity, positioning, contact methods, profile links, and résumé URL in `PROFILE`;
+- factual project case studies in `PROJECTS`, including approved evidence, optional images, and honest live/repository availability;
+- actual agent-workflow stages and tool contexts in `WORKFLOW_STAGES` and `TOOL_PRACTICES`.
+
+Keep unverified fields empty. The interface intentionally renders unavailable states rather than placeholder claims or fake links.
+
+## Assets and privacy
+
+Use owner-supplied, licensed assets. Do not add client details, repository URLs, metrics, contact information, prompts, or screenshots unless they are explicitly approved for public release. This project currently requires no API key or environment variable.
+
+## Accessibility and interaction
+
+The interface supports keyboard navigation, focus-visible styling, modal Escape-to-close and focus restoration, reduced-motion preferences, and an explicit opt-in sound control. Visual scanlines, pointer readouts, and waveform effects are decorative—not operational telemetry.

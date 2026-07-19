@@ -1,6 +1,6 @@
 {
-  "name": "Nicholas Vollmer Portfolio",
-  "description": "Interactive cybernetic blueprint portfolio for Nicholas Vollmer, Systems Architect & Frontend Engineer.",
+  "name": "Engineering Portfolio",
+  "description": "An evidence-based software engineering portfolio.",
   "requestFramePermissions": [],
-  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+  "majorCapabilities": []
 }

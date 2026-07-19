@@ -1,35 +1,58 @@
-/**
- * @license
- * SPDX-License-Identifier: Apache-2.0
- */
-
-export interface ProjectSpec {
+export interface PublicLink {
   label: string;
-  value: string;
+  url: string;
 }
 
-export interface ProjectMetric {
+export interface Profile {
+  displayName?: string;
+  title?: string;
+  summary?: string;
+  bio?: string;
+  location?: string;
+  email?: string;
+  links: PublicLink[];
+  resumeUrl?: string;
+}
+
+export interface ProjectLink {
+  label: string;
+  url?: string;
+  unavailableLabel?: string;
+}
+
+export interface ProjectEvidence {
   label: string;
   value: string;
-  color?: string;
 }
 
 export interface Project {
   id: string;
   title: string;
   status: string;
-  description: string;
-  tech: string[];
-  specs: ProjectSpec[];
-  imageUrl: string;
-  metrics: ProjectMetric[];
+  summary: string;
+  problem: string;
+  role: string;
+  constraints?: string;
+  solution?: string;
+  outcome?: string;
+  agentWorkflow?: string;
+  technologies: string[];
+  evidence: ProjectEvidence[];
+  image?: { src: string; alt: string };
+  live: ProjectLink;
+  repository: ProjectLink;
 }
 
-export interface LedgerItem {
+export interface WorkflowStage {
+  name: string;
+  description: string;
+  accountability: string;
+}
+
+export interface ToolPractice {
   tool: string;
-  type: string;
-  proficiency: number;
-  status: 'ONLINE' | 'OFFLINE' | 'ACTIVE' | 'READY' | 'IDLE';
+  context: string;
+  status: 'Primary workflow' | 'Experimentation' | 'Not currently used';
 }
 
 export interface TerminalLine {
