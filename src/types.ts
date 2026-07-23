@@ -43,17 +43,6 @@ export interface Project {
   repository: ProjectLink;
 }
 
-export interface WorkflowStage {
-  name: string;
-  description: string;
-  accountability: string;
-}
-
-export interface ToolPractice {
-  tool: string;
-  context: string;
-  status: 'Primary workflow' | 'Experimentation' | 'Not currently used';
-}
 
 export interface TerminalLine {
   text: string;

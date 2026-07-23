@@ -1,4 +1,4 @@
-import { Profile, Project, ToolPractice, WorkflowStage } from './types';
+import { Profile, Project } from './types';
 
 /**
  * The only source of public portfolio content. Populate these fields with
@@ -13,7 +13,7 @@ export const PROFILE: Profile = {
   title: 'Software Engineer',
 
   // One sentence explaining the kind of work you do or want to be hired for.
-  // summary: 'I build reliable web applications with a thoughtful, agent-assisted workflow.',
+  summary: 'I build reliable web applications with a thoughtful, agent-assisted workflow.',
 
   // A slightly longer introduction. Keep it public-safe; do not include private details.
   // bio: 'Write two or three sentences about your experience, interests, and the work shown here.',
@@ -32,29 +32,29 @@ export const PROFILE: Profile = {
 
 
   // Optional public PDF or hosted resume link. The site shows “unavailable” until this is set.
-  // resumeUrl: '/assets/your-resume.pdf',
+  resumeUrl: `${import.meta.env.BASE_URL}resume.pdf`,
 };
 
 /**
- * Add a case study only when every claim in it is true and approved for public
+ * Add a project only when every claim in it is true and approved for public
  * release. Copy the commented structure below, fill it with real information,
  * then remove the leading `//` characters.
  */
-export const PROJECTS: Project[] = [];
-// export const PROJECTS: Project[] = [
-//   {
+//export const PROJECTS: Project[] = [];
+ export const PROJECTS: Project[] = [
+   {
 //     // A short unique ID used internally by the UI.
-//     id: 'project-01',
+     id: '#1',
 //     // The real project name. Do not use a client name without permission.
-//     title: 'Project name',
+     title: 'WebLLM Chat',
 //     // An honest status such as “Shipped”, “In progress”, or “Private”.
-//     status: 'Shipped',
+     status: 'Shipped',
 //     // One or two sentences describing what the project is.
-//     summary: 'A concise, factual summary of the project.',
+     summary: 'Talk to AI using WebLLM',
 //     // What problem existed and who it helped. Keep confidential details out.
-//     problem: 'The user or business problem this project addressed.',
+  //   problem: 'The user or business problem this project addressed.',
 //     // Your specific contribution—not a team-wide or agent-generated claim.
-//     role: 'What I designed, built, reviewed, or owned.',
+ //    role: 'What I designed, built, reviewed, or owned.',
 //     // Optional: important limits such as timeline, integrations, privacy, or cost.
 //     constraints: 'Optional constraints and trade-offs.',
 //     // Optional: the approach and key technical decisions you made.
@@ -64,49 +64,19 @@ export const PROJECTS: Project[] = [];
 //     // Optional: how agents helped and how you reviewed or verified their work.
 //     agentWorkflow: 'Optional public description of the agent-assisted workflow.',
 //     // Technologies you genuinely used on this project.
-//     technologies: ['React', 'TypeScript'],
+     technologies: ['React', 'TypeScript'],
 //     // Evidence readers can understand: verified metrics, a published write-up, etc.
 //     evidence: [{ label: 'Evidence', value: 'Describe the approved evidence.' }],
 //     // Optional local or approved remote image. Always write meaningful alt text.
-//     // image: { src: '/assets/project-01.png', alt: 'Describe what the image shows.' },
+      image: { src: '/assets/webllm-pic.png', alt: 'Describe what the image shows.' },
 //     // A real public deployment, or an honest unavailable state.
-//     live: { label: 'View live site', unavailableLabel: 'No public deployment' },
+     live: { label: 'View live site', unavailableLabel: 'No public deployment' },
 //     // A real public repository, or an honest unavailable state.
 //     repository: { label: 'View repository', unavailableLabel: 'Repository private' },
-//   },
-// ];
+   },
+ ];
 
-/**
- * Describe your actual delivery process, not an aspirational one. Each stage
- * should make clear where you remain accountable for the outcome.
- */
-export const WORKFLOW_STAGES: WorkflowStage[] = [];
-// export const WORKFLOW_STAGES: WorkflowStage[] = [
-//   {
-//     // A short stage name, for example “Specify” or “Review”.
-//     name: 'Specify',
-//     // What happens during this stage and what artifact it produces.
-//     description: 'I turn the problem into scoped requirements and acceptance criteria.',
-//     // The decision or check you personally own at this point.
-//     accountability: 'I confirm the scope and acceptance criteria before implementation.',
-//   },
-// ];
 
-/**
- * List tools only when you really use them. The status is intentionally a
- * descriptive category rather than a made-up proficiency percentage.
- */
-export const TOOL_PRACTICES: ToolPractice[] = [];
-// export const TOOL_PRACTICES: ToolPractice[] = [
-//   {
-//     // The real tool or environment name.
-//     tool: 'Tool name',
-//     // What you use it for in your workflow.
-//     context: 'How it helps with a specific part of my work.',
-//     // Choose exactly one: 'Primary workflow', 'Experimentation', or 'Not currently used'.
-//     status: 'Primary workflow',
-//   },
-// ];
 
 export const SITE_METADATA = {
   // Browser and social-preview title. Use your name or portfolio title when ready.
