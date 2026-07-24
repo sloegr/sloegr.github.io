@@ -4,6 +4,8 @@ import path from 'path';
 import { defineConfig } from 'vitest/config';
 
 export default defineConfig(() => ({
+  // Base path set to '/' for root domain deployment (username.github.io)
+  base: '/',
   plugins: [react(), tailwindcss()],
   resolve: { alias: { '@': path.resolve(__dirname, '.') } },
   server: {
