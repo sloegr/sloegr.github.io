@@ -1,20 +1,13 @@
-# Interactive System Skills & Capabilities
+# Interface Capabilities
 
-This file details the custom skill modules and interactive systems integrated into this blueprint-themed development engine.
+## Optional sound feedback
 
-## 1. Web Audio Synthesizer (`playBeep`)
-- Uses browser native `AudioContext` and `OscillatorNode` to generate real-time feedback tones.
-- Automatically handles block exclusions if autoplay policies restrict immediate instantiation.
-- Custom parameter ranges:
-  - Frequencies: `250Hz` (low alert) to `950Hz` (system launch).
-  - Waveforms: `sine` (default hover feedback), `triangle` (high-fidelity prompts), `square` / `sawtooth` (hardware telemetry alerts).
+`playBeep` uses the native Web Audio API at low volume and short duration. It is disabled until the visitor explicitly enables sound.
 
-## 2. Interactive Coordinate Tracker
-- Tracks local client-side viewport mouse motions and tactile touch movements seamlessly.
-- Automatically updates state headers with instant layout positions (`COORD: [X,Y]`), mirroring physical telemetry logs.
+## Decorative interface signals
 
-## 3. Dynamic Waveform Visualizer
-- Uses secondary state intervals to alter high-speed heights (`telemetry-bar`), simulating server activity without bloated heavy canvas frames.
+The scanline, local pointer readout, and waveform are visual effects. They are labelled as decorative and respect `prefers-reduced-motion`. Pointer and waveform updates are isolated from the main application state.
 
-## 4. Custom CLI Terminal Emulator
-- Recreates a retro command line console with responsive output logs, command histories, and feedback messages.
+## Portfolio terminal
+
+The terminal accepts `help`, `about`, `projects`, `workflow`, `contact`, `sound`, and `clear`. Its responses read from approved data and state clearly when no public content is configured.
