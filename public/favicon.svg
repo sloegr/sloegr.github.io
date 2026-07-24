@@ -1,0 +1,39 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" width="100%" height="100%">
+  <defs>
+    <!-- Blueprint Grid Pattern -->
+    <pattern id="grid" width="64" height="64" patternUnits="userSpaceOnUse">
+      <path d="M 64 0 L 0 0 0 64" fill="none" stroke="#00f0ff" stroke-width="1.5" stroke-opacity="0.15"/>
+    </pattern>
+    <!-- Subtle Glow for Cyan Stroke -->
+    <filter id="cyan-glow" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="6" result="blur" />
+      <feMerge>
+        <feMergeNode in="blur" />
+        <feMergeNode in="SourceGraphic" />
+      </feMerge>
+    </filter>
+  </defs>
+
+  <!-- Blueprint Navy Background -->
+  <rect width="512" height="512" rx="96" fill="#070c14"/>
+  <rect width="512" height="512" rx="96" fill="url(#grid)"/>
+
+  <!-- Technical Corner Crosshairs -->
+  <path d="M 48 80 L 48 48 L 80 48" stroke="#00f0ff" stroke-width="6" fill="none" opacity="0.5"/>
+  <path d="M 464 80 L 464 48 L 432 48" stroke="#00f0ff" stroke-width="6" fill="none" opacity="0.5"/>
+  <path d="M 48 432 L 48 464 L 80 464" stroke="#00f0ff" stroke-width="6" fill="none" opacity="0.5"/>
+  <path d="M 464 432 L 464 464 L 432 464" stroke="#00f0ff" stroke-width="6" fill="none" opacity="0.5"/>
+
+  <!-- Blueprint Monogram J -->
+  <path d="M 210 140 H 330 M 285 140 V 310 A 65 65 0 0 1 155 310" 
+        stroke="#00f0ff" 
+        stroke-width="42" 
+        stroke-linecap="square" 
+        stroke-linejoin="miter" 
+        fill="none" 
+        filter="url(#cyan-glow)"/>
+
+  <!-- CAD Alignment Nodes -->
+  <circle cx="285" cy="140" r="8" fill="#ffffff" />
+  <circle cx="155" cy="310" r="8" fill="#ffffff" />
+</svg>
