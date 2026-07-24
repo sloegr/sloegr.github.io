@@ -76,8 +76,14 @@ export const PROJECTS: Project[] = [
       alt: 'Describe what the image shows.',
     },
     //     // A real public deployment, or an honest unavailable state.
-    live: { label: 'View live site', unavailableLabel: 'No public deployment' },
+    live: {
+      label: 'View live site',
+      url: 'https://sloegr.github.io/webllm-chat/',
+    },
     //     // A real public repository, or an honest unavailable state.
-    //     repository: { label: 'View repository', unavailableLabel: 'Repository private' },
+    repository: {
+      label: 'View repository',
+      url: 'https://github.com/sloegr/webllm-chat/',
+    },
   },
 ];
