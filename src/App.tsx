@@ -70,10 +70,8 @@ export default function App() {
 
       <PortfolioNavigation
         activeTab={activeTab}
-        audioEnabled={audioEnabled}
         profile={PROFILE}
         onNavigate={navigate}
-        onToggleAudio={toggleAudio}
       />
 
       <main className="flex-1 pt-14 pb-20 md:pb-8 px-4 md:px-10 max-w-7xl w-full mx-auto flex flex-col justify-center relative">

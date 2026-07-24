@@ -13,10 +13,8 @@ describe('PortfolioNavigation', () => {
     render(
       <PortfolioNavigation
         activeTab="root"
-        audioEnabled={false}
         profile={profile}
         onNavigate={onNavigate}
-        onToggleAudio={vi.fn()}
       />,
     );
 
