@@ -22,10 +22,6 @@ body {
   color: #e2e8f0;
 }
 
-.glow-border {
-  box-shadow: 0 0 15px rgba(0, 229, 255, 0.2);
-}
-
 .cursor-blink {
   animation: blink-anim 1s step-end infinite;
 }
@@ -49,17 +45,6 @@ body {
   0% { top: 0%; }
   100% { top: 100%; }
 }
-
-.pulse-dot {
-  animation: pulse-green-anim 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
-}
-
-@keyframes pulse-green-anim {
-  0%, 100% { opacity: 1; filter: drop-shadow(0 0 2px #39ff14); }
-  50% { opacity: 0.4; filter: drop-shadow(0 0 6px #39ff14); }
-}
-
-
 
 button, a, input {
   outline-offset: 3px;

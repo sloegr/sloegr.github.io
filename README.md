@@ -15,11 +15,10 @@ Use `npm run lint` for TypeScript validation and `npm run build` to create the p
 
 ## Publishing content
 
-`src/data.ts` is the single source of public portfolio content. Before publishing, supply and verify:
+`src/data.ts` is the source of public profile and project content. Before publishing, supply and verify:
 
 - public identity, positioning, contact methods, profile links, and résumé URL in `PROFILE`;
 - factual project case studies in `PROJECTS`, including approved evidence, optional images, and honest live/repository availability;
-- actual agent-workflow stages and tool contexts in `WORKFLOW_STAGES` and `TOOL_PRACTICES`.
 
 Keep unverified fields empty. The interface intentionally renders unavailable states rather than placeholder claims or fake links.
 

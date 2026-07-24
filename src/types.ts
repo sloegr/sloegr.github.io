@@ -30,19 +30,20 @@ export interface Project {
   title: string;
   status: string;
   summary: string;
-  problem: string;
-  role: string;
+  problem?: string;
+  role?: string;
   constraints?: string;
   solution?: string;
   outcome?: string;
   agentWorkflow?: string;
   technologies: string[];
-  evidence: ProjectEvidence[];
+  evidence?: ProjectEvidence[];
   image?: { src: string; alt: string };
   live: ProjectLink;
-  repository: ProjectLink;
+  repository?: ProjectLink;
 }
 
+export type Tab = 'root' | 'terminal' | 'archive';
 
 export interface TerminalLine {
   text: string;
