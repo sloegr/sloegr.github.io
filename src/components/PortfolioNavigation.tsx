@@ -2,8 +2,6 @@ import {
   FolderOpen,
   Keyboard,
   Terminal as TerminalIcon,
-  Volume2,
-  VolumeX,
 } from 'lucide-react';
 import type { LucideIcon } from 'lucide-react';
 import type { Profile, Tab } from '../types';
@@ -22,20 +20,16 @@ export const NAVIGATION_ITEMS: NavigationItem[] = [
 
 interface PortfolioNavigationProps {
   activeTab: Tab;
-  audioEnabled: boolean;
   items?: NavigationItem[];
   profile: Profile;
   onNavigate: (tab: Tab) => void;
-  onToggleAudio: () => void;
 }
 
 export function PortfolioNavigation({
   activeTab,
-  audioEnabled,
   items = NAVIGATION_ITEMS,
   profile,
   onNavigate,
-  onToggleAudio,
 }: PortfolioNavigationProps) {
   const resumeAvailable = Boolean(profile.resumeUrl);
 
@@ -79,17 +73,6 @@ export function PortfolioNavigation({
             </span>
           )}
         </nav>
-        <button
-          onClick={onToggleAudio}
-          className="icon-button mr-2"
-          aria-label={audioEnabled ? 'Disable interface sound' : 'Enable interface sound'}
-        >
-          {audioEnabled ? (
-            <Volume2 className="w-4 h-4" aria-hidden="true" />
-          ) : (
-            <VolumeX className="w-4 h-4" aria-hidden="true" />
-          )}
-        </button>
       </header>
 
       <nav
