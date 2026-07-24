@@ -1,0 +1,63 @@
+name: Deploy to GitHub Pages
+
+on:
+  # Covers direct updates and the commit created by a merged pull request.
+  push:
+    branches: [main]
+
+# Required by the official GitHub Pages deployment actions.
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Keep only the latest deployment in progress for this site.
+concurrency:
+  group: pages
+  cancel-in-progress: true
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Fetch the exact commit that was pushed to main.
+      - name: Check out source
+        uses: actions/checkout@v4
+
+      # Configure the GitHub Pages environment and its deployment metadata.
+      - name: Configure GitHub Pages
+        uses: actions/configure-pages@v5
+
+      # Install the Node version used to build the Vite site.
+      - name: Set up Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+
+      # Restore locked dependencies, then generate the production site in dist/.
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build site
+        run: npm run build
+
+      # Package the generated Vite build for GitHub Pages.
+      - name: Upload GitHub Pages artifact
+        uses: actions/upload-pages-artifact@v4
+        with:
+          path: ./dist
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      # Publish the uploaded artifact to GitHub Pages.
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
