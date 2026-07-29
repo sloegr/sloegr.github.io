@@ -143,7 +143,7 @@ export function ProjectDialog({ project, onClose }: ProjectDialogProps) {
           )}
         </div>
         <div className="border-t border-[#3b494c] pt-4 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 shrink-0">
-          {action(project.live)}
+          {project.live && action(project.live)}
           {project.repository && action(project.repository)}
         </div>
       </div>

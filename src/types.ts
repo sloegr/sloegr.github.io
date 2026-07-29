@@ -39,7 +39,7 @@ export interface Project {
   technologies: string[];
   evidence?: ProjectEvidence[];
   image?: { src: string; alt: string };
-  live: ProjectLink;
+  live?: ProjectLink;
   repository?: ProjectLink;
 }
 
