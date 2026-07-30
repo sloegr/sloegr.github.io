@@ -56,7 +56,7 @@ export const PROJECTS: Project[] = [
     solution: 'Used @mlc-ai/web-llm to compile and run small language models client-side via WebGPU. Lazy-loaded the WebLLM runtime to keep initial page load fast. Built a custom streaming parser that separates model reasoning from the final answer in real time.',
     outcome: 'Fully functional browser-native AI chat with zero server dependency. Deployed as a static site on GitHub Pages. Supports four selectable models with streaming responses and reasoning display.',
     agentWorkflow: 'Used AI agents to scaffold and iterate on the React application, including modular refactoring, the streaming completion parser, and UI behavior. Reviewed each agent output against the project architecture rules and manually verified inference, model loading, and chat context in the browser.',
-    technologies: ['React 19', 'Vite', 'WebGPU', 'WebLLM', 'JavaScript'],
+    technologies: ['React', 'WebGPU', 'WebLLM', 'JavaScript'],
     evidence: [{ label: 'Evidence', value: 'Live deployment on GitHub Pages with open source repository. Manual browser testing across model loading, streaming inference, reasoning display, and sequential chat context.' }],
     image: {
       src: '/assets/webllm-pic.png',
@@ -85,7 +85,7 @@ export const PROJECTS: Project[] = [
       technologies: ['JavaScript', 'WebLLM', 'WebGPU', 'Chrome Extension APIs', 'esbuild'],
       evidence: [{ label: 'Evidence', value: 'Runtime-verified scanner, messaging, UI states, and WebLLM integration. Architecture documented in accessibility-auditor-scaffold.md.' }],
       image: {
-        src: '/assets/webllm-pic.png',
+        src: 'assets/accessibility-pic.png',
         alt: 'Accessibility Auditor extension popup showing scan results with accessibility findings.',
       },
       repository: {
