@@ -92,6 +92,45 @@ export const PROJECTS: Project[] = [
         label: 'View repository',
         url: 'https://github.com/sloegr/accessibility-auditor/',
       },
+  },
+  {
+    id: '#3',
+    title: 'Exo Musix Player',
+    status: 'Shipped',
+    summary:
+      'A lightweight, dark-themed desktop music player for scanning and playing local audio files, built with Tauri, Svelte, and Rust.',
+    problem:
+      'Local music libraries often need a focused desktop player that can scan nested folders, read audio metadata and artwork, and retain listening history without relying on a cloud service.',
+    role:
+      'I built the full desktop application, including the Svelte frontend, Rust/Tauri IPC layer, local audio scanning and metadata extraction, playback engine, SQLite-backed recents, and custom frameless window controls.',
+    constraints:
+      'The application must work with local files and native system audio output while keeping play history private on-device. It supports common audio formats and uses a desktop runtime rather than browser-based audio APIs.',
+    solution:
+      'Built a Tauri v2 application with a Svelte 5 and TypeScript interface backed by Rust. The backend recursively scans folders with walkdir, extracts metadata and embedded artwork with lofty, plays audio through rodio, and stores qualified listening history in a bundled SQLite database. Tauri events keep the playback UI synchronized in real time.',
+    outcome:
+      'A functional cross-platform desktop music player with local library scanning, metadata-rich track browsing, embedded album artwork, full playback controls, persisted recents, and a polished dark custom-chrome interface.',
+    agentWorkflow:
+      'Used AI-assisted development to scaffold and refine the Tauri, Svelte, and Rust architecture. Reviewed generated code against project conventions and verified folder scanning, playback state updates, event-driven UI synchronization, and persisted listening history.',
+    technologies: [
+      'Tauri v2',
+      'Svelte 5',
+      'TypeScript',
+      'Rust',
+    ],
+    evidence: [
+      {
+        label: 'Evidence',
+        value:
+          'Open-source Tauri application with local-library scanning, playback controls, metadata and artwork extraction, real-time playback events, and SQLite-backed recent-play history.',
+      },
+    ],
+    image: {
+      src: '/assets/exo-musix.png',
+      alt: 'The Exo Musix Player desktop application showing a local music library',
+    },
+    repository: {
+      label: 'View repository',
+      url: 'https://github.com/sloegr/exo-musix-player',
+    },
   }
-
 ];
