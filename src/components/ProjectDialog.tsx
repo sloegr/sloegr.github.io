@@ -2,6 +2,8 @@ import { ExternalLink, X } from 'lucide-react';
 import { useCallback, useEffect, useRef } from 'react';
 import type { KeyboardEvent as ReactKeyboardEvent } from 'react';
 import type { Project } from '../types';
+import { ProjectImage } from './ProjectImage';
+import { TagList } from './TagList';
 
 interface ProjectDialogProps {
   project: Project;
@@ -95,13 +97,7 @@ export function ProjectDialog({ project, onClose }: ProjectDialogProps) {
         </div>
 
         <div className="overflow-y-auto pr-1 space-y-6 text-sm">
-          {project.image && (
-            <img
-              src={project.image.src}
-              alt={project.image.alt}
-              className="w-full max-h-72 object-contain border border-[#3b494c]"
-            />
-          )}
+          {project.image && <ProjectImage image={project.image} variant="dialog" />}
           <p className="font-mono text-slate-300 leading-relaxed">{project.summary}</p>
           {(project.problem ||
             project.role ||
@@ -132,15 +128,7 @@ export function ProjectDialog({ project, onClose }: ProjectDialogProps) {
               </ul>
             </div>
           ) : null}
-          {project.technologies.length > 0 && (
-            <div className="flex flex-wrap gap-2">
-              {project.technologies.map((technology) => (
-                <span key={technology} className="tag">
-                  {technology}
-                </span>
-              ))}
-            </div>
-          )}
+          {project.technologies.length > 0 && <TagList items={project.technologies} />}
         </div>
         <div className="border-t border-[#3b494c] pt-4 mt-4 grid grid-cols-1 sm:grid-cols-2 gap-3 shrink-0">
           {project.live && action(project.live)}

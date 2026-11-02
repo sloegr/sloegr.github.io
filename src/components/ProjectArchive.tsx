@@ -1,6 +1,8 @@
 import { ExternalLink } from 'lucide-react';
 import type { Project } from '../types';
 import { EmptyState } from './EmptyState';
+import { ProjectImage } from './ProjectImage';
+import { TagList } from './TagList';
 
 interface ProjectArchiveProps {
   projects: Project[];
@@ -35,24 +37,12 @@ export function ProjectArchive({ projects, onOpenProject }: ProjectArchiveProps)
                 <span className="font-mono text-[10px] text-slate-500">{project.id}</span>
                 <span className="font-mono text-[10px] text-primary">{project.status}</span>
               </div>
-              {project.image && (
-                <img
-                  src={project.image.src}
-                  alt={project.image.alt}
-                  className="w-full h-32 object-cover mt-4 border border-[#3b494c]"
-                />
-              )}
+              {project.image && <ProjectImage image={project.image} variant="card" />}
               <h2 className="font-sans text-md font-bold mt-4 text-primary">{project.title}</h2>
               <p className="text-slate-300 font-mono text-xs leading-relaxed my-3 flex-1">
                 {project.summary}
               </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                {project.technologies.map((technology) => (
-                  <span key={technology} className="tag">
-                    {technology}
-                  </span>
-                ))}
-              </div>
+              <TagList items={project.technologies} />
               <button onClick={() => onOpenProject(project)} className="secondary-button mt-auto">
                 VIEW PROJECT <ExternalLink className="w-3 h-3" aria-hidden="true" />
               </button>
